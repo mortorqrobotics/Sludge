@@ -1,2 +1,2 @@
 # Sludge
-Another game creatd with libGDX.
+Another game created with libGDX.
