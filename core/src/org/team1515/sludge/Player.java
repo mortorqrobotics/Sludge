@@ -1,4 +1,4 @@
-package com.arvin.robotics.sludge;
+package org.team1515.sludge;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;

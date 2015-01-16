@@ -1,4 +1,4 @@
-package com.arvin.robotics.sludge;
+package org.team1515.sludge;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
@@ -63,7 +63,6 @@ public class Main extends Game {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
 		bullet = new Texture("badlogic.jpg");
 		rlWH = new Vector2(50, 30);
 		udWH = new Vector2(30, 50);
@@ -139,7 +138,7 @@ public class Main extends Game {
 				//barrier1.setX(barrier1.getX() + speed.x);
 				for (Entity.EntityBody body : entity1.entities) {
 					body.rectangle.setX(body.rectangle.getX() + speed.x);
-					dir = Direction.LEFT;
+					dirBullet = Direction.LEFT;
 
 				}
 				//img = new Texture("car1L.png");
@@ -149,7 +148,7 @@ public class Main extends Game {
 		if (!(rect.getX() + rect.getWidth() >= Gdx.graphics.getWidth()-margin)) {
 			if(Gdx.input.isKeyPressed(Input.Keys.D)) {
 				rect.setX(rect.getX() + speed.x);
-				dir = Direction.RIGHT;
+				dirBullet = Direction.RIGHT;
 				//img = new Texture("car1R.png");
 				//rect.setSize(rlWH.x, rlWH.y);
 			}
@@ -159,7 +158,7 @@ public class Main extends Game {
 
 				for (Entity.EntityBody body : entity1.entities) {
 					body.rectangle.setX(body.rectangle.getX() - speed.x);
-					dir = Direction.RIGHT;
+					dirBullet = Direction.RIGHT;
 
 				}
 				//img = new Texture("car1R.png");
@@ -169,7 +168,7 @@ public class Main extends Game {
 		if(!(rect.getY() <= 0+margin)) {
 			if(Gdx.input.isKeyPressed(Input.Keys.S)) {
 				rect.setY(rect.getY() - speed.y);
-				dir = Direction.DOWN;
+				dirBullet = Direction.DOWN;
 				//img = new Texture("car1D.png");
 				//rect.setSize(udWH.x, udWH.y);
 			}
@@ -178,7 +177,7 @@ public class Main extends Game {
 			if(Gdx.input.isKeyPressed(Input.Keys.S)) {
 				for (Entity.EntityBody body : entity1.entities) {
 					body.rectangle.setY(body.rectangle.getY() + speed.y);
-					dir = Direction.DOWN;
+					dirBullet = Direction.DOWN;
 
 				}
 				//img = new Texture("car1D.png");
@@ -188,7 +187,7 @@ public class Main extends Game {
 		if (!(rect.getY() + rect.getHeight() >= Gdx.graphics.getHeight()-margin)) {
 			if(Gdx.input.isKeyPressed(Input.Keys.W)) {
 				rect.setY(rect.getY() + speed.y);
-				dir = Direction.UP;
+				dirBullet = Direction.UP;
 				//img = new Texture("car1U.png");
 				//rect.setSize(udWH.x, udWH.y);
 			}
@@ -197,7 +196,7 @@ public class Main extends Game {
 			if(Gdx.input.isKeyPressed(Input.Keys.W)) {
 				for (Entity.EntityBody body : entity1.entities) {
 					body.rectangle.setY(body.rectangle.getY() - speed.y);
-					dir = Direction.UP;
+					dirBullet = Direction.UP;
 
 				}
 				//img = new Texture("car1U.png");
