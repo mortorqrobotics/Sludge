@@ -1,4 +1,4 @@
-package org.team1515.sludge;
+package org.team1515.entities;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;

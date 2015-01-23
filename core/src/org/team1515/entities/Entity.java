@@ -1,9 +1,7 @@
-package org.team1515.sludge;
+package org.team1515.entities;
 
-/**
- * Created by arvinzadeh on 1/11/15.
- */
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -15,29 +13,18 @@ import java.util.List;
  * Created by arvin on 1/11/15.
  */
 public class Entity {
-    List<EntityBody> entities;
-    Vector2 entitySpeed;
-    public Entity(){
-        entities = new ArrayList<EntityBody>();
-        entitySpeed = new Vector2(1,1);
+    Sprite sprite;
+
+
+
+    public Entity(Sprite sprite){
+        this.sprite = sprite;
     }
 
-    public void removeEntity(EntityBody body){
-        entities.remove(body);
-        //System.out.println("Removed!");
+    public void render(SpriteBatch batch) {
+        sprite.draw(batch);
     }
-
-    public void addEntity(Texture texture, Rectangle rectangle, int direction, String type){
-        entities.add(new EntityBody(texture, rectangle, direction, type));
-    }
-
-
-
-    public void startMoving(){
-        //May not be used
-    }
-
-    public void render(SpriteBatch batch){
+        /*
         for (EntityBody body : entities){
             if (body.direction == 1){
                 body.rectangle.setX(body.rectangle.getX()+entitySpeed.x);
@@ -57,25 +44,5 @@ public class Entity {
 
 
         }
-
-
-
-    }
-
-    public class EntityBody{
-        Texture texture;
-        Rectangle rectangle;
-        int direction;
-        String type;
-
-        public EntityBody(Texture texture, Rectangle rectangle, int direction, String type){
-            this.rectangle = rectangle;
-            this.texture = texture;
-            this.direction = direction;
-            this.type = type;
-        }
-
-
-    }
-
+        */
 }
